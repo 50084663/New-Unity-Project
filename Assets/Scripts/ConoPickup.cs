@@ -4,14 +4,15 @@ using UnityEngine;
 
 
 public class ConoPickup : MonoBehaviour
-
 {
     public static int conosRecolectados = 0;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("¡Encontraste el cono escondido! ¡GANASTE!");
+            conosRecolectados++;
+            Debug.Log("¡Encontraste el cono! Total: " + conosRecolectados);
             Destroy(gameObject);
         }
     }
